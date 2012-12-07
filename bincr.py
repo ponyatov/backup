@@ -25,12 +25,15 @@ c0.execute("delete from DAT where TS < '%s'"%PURGE_TS)
 
 c1.execute("select PATH from dirs where OFF is null")
 C1RES=c1.fetchall()
+PREVDR=''
 for DIR in map(lambda x:x[0],C1RES):
     for DR,t,FILES in os.walk(DIR):
         for FN in FILES:
             if not re.match(r'^(%s)$'%EXCLUDES_REX,FN):
                 print ',',
                 SF=DR+'\\'+FN
+                if DR!=PREVDR:
+                    PREVDR=DR ; print DR
                 #print 'SF',SF.encode('cp866')
                 STAT=os.stat(SF)
                 SZ=STAT.st_size #; print 'SZ',SZ
