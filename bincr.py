@@ -71,8 +71,11 @@ print >>ARCFILE,MSQLDUMP
 
 ARCFILE.close()
 
-os.system("rar a -m5 -o- -r C:\\backup\\%s.rar @files"%NOW)
-os.system("copy /B /V C:\\backup\\%s.rar F:\\backup\\%s.rar"%(NOW,NOW))
+SSARC = 'C:\\backup\\%s.rar'%NOW
+TTARC = 'D:\\backup\\%s.rar'%NOW
+CMD = "winrar a -m5 -o- -r %s @files"%SSARC ; print CMD ; print os.system(CMD)
+CMD = "cp -v %s %s"%(SSARC,TTARC) ; print CMD ; print os.system(CMD)
+CMD = "winrar t %s"%TTARC ; print CMD ; print os.system(CMD)
 
 raw_input('.')
 os.remove(MSQLDUMP)
