@@ -72,7 +72,7 @@ print >>ARCFILE,MSQLDUMP
 ARCFILE.close()
 
 SSARC = 'C:\\backup\\%s.rar'%NOW
-TTARC = 'D:\\backup\\%s.rar'%NOW
+TTARC = 'E:\\backup\\%s.rar'%NOW
 CMD = "winrar a -m5 -o- -r %s @files"%SSARC ; print CMD ; print os.system(CMD)
 CMD = "cp -v %s %s"%(SSARC,TTARC) ; print CMD ; print os.system(CMD)
 CMD = "winrar t %s"%TTARC ; print CMD ; print os.system(CMD)
