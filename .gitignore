@@ -2,4 +2,6 @@
 *.swp
 *.tib
 *.rar
+*.files
+backup.db
 
