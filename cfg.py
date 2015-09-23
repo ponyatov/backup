@@ -1,3 +1,0 @@
-PURGE_DAYS=7
-
-
