@@ -2,6 +2,7 @@
 DIRS = [
         r'D:\w\backup',
         r'D:\parts',
+		r'D:\pictures'
         ]
 
 NOREX1 = r'_[A-Z]+\\.+\.(GEM|PJ|dat\.xml|F[CS]T|bin|tpath)$'
